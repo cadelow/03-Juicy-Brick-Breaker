@@ -1,6 +1,25 @@
-# Godot-Project-Template
+# 03-Juicy-Brick-Breaker
 
-This is an empty Godot project that can be used as a starting place for Godot repositories. After creating and cloning the repository, download this as a zip file. Unzip it and copy the files into the repository folder. You should then be able to import the project.godot file (in the repository folder) as a project in Godot. Make sure you change the project name in the Project Settings.
+# Project Name
+Project 3 -- Juicy Brick Breaker, 10 October 2020
+
+Description
 
 ## Implementation
+
 Created in Godot 3.2.2
+
+Features included:
+
++ Changing the color of the paddle, ball, and blocks
++ Animate how the blocks and the paddle appear on the screen
++ Score tracking
+
+## References
+None
+
+## Future Development
+None
+
+## Created by
+Cadence Low
