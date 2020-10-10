@@ -2,7 +2,7 @@
 
 Project 3 -- Juicy Brick Breaker, 10 October 2020
 
-Description
+A simple brick breaker game
 
 ## Implementation
 
@@ -13,6 +13,7 @@ Features included:
 + Changing the color of the paddle, ball, and blocks
 + Animate how the blocks and the paddle appear on the screen
 + Score tracking
++ Main menu
 + Add screen shake
 + Add eyes to the paddle
 + Make the eyes blink
