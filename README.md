@@ -12,8 +12,6 @@ Features included:
 
 + Changing the color of the paddle, ball, and blocks
 + Animate how the blocks and the paddle appear on the screen
-+ Score tracking
-+ Main menu
 + Add screen shake
 + Add eyes to the paddle
 + Make the eyes blink
@@ -21,6 +19,11 @@ Features included:
 + Add a smile to the paddle and animate it based on the location of the ball
 + Add particles when a block is hit
 + Add particles when the paddle is hit
+
+Other features:
+
++ Score tracking
++ Main menu
 
 ## References
 None
