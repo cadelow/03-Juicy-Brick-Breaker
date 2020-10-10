@@ -1,6 +1,5 @@
 # 03-Juicy-Brick-Breaker
 
-# Project Name
 Project 3 -- Juicy Brick Breaker, 10 October 2020
 
 Description
