@@ -50,6 +50,8 @@ func reset_values():
 func update_score(s):
 	score += s
 	get_node("/root/Game/Scores/Score").text = "Score: " + str(score)
+	if score > 100:
+		get_tree().change_scene("res://Level/Level2.tscn")
 
 func update_lives(h):
 	get_node("/root/Game/Scores/Lives").text = "Lives: " + str(lives)

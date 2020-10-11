@@ -1,26 +1,26 @@
 [gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://Paddle/Paddle.gd" type="Script" id=1]
-[ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=2]
-[ext_resource path="res://Brick/Bricks.gd" type="Script" id=3]
-[ext_resource path="res://HUD/HUD.gd" type="Script" id=4]
-[ext_resource path="res://Walls/Walls.gd" type="Script" id=5]
-[ext_resource path="res://Background/Background.gd" type="Script" id=6]
-[ext_resource path="res://Assets/confetti.png" type="Texture" id=7]
-[ext_resource path="res://Assets/bubble.png" type="Texture" id=8]
-[ext_resource path="res://Camera/Camera.gd" type="Script" id=9]
-[ext_resource path="res://Ball/Trail_Container.gd" type="Script" id=10]
-[ext_resource path="res://Camera/WorldEnvironment.gd" type="Script" id=11]
-[ext_resource path="res://Paddle/Face.gd" type="Script" id=12]
-[ext_resource path="res://Assets/eye.png" type="Texture" id=13]
-[ext_resource path="res://Assets/mouth.png" type="Texture" id=14]
-[ext_resource path="res://Assets/pupil.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Datalegreya-Thin.otf" type="DynamicFontData" id=16]
-[ext_resource path="res://Audio/Music.gd" type="Script" id=17]
-[ext_resource path="res://Assets/sound3.wav" type="AudioStream" id=18]
-[ext_resource path="res://Assets/sound2.wav" type="AudioStream" id=19]
-[ext_resource path="res://Assets/sound1.wav" type="AudioStream" id=20]
-[ext_resource path="res://Assets/music.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Background/Background.gd" type="Script" id=1]
+[ext_resource path="res://Camera/Camera.gd" type="Script" id=2]
+[ext_resource path="res://Paddle/Face.gd" type="Script" id=3]
+[ext_resource path="res://Audio/Music.gd" type="Script" id=4]
+[ext_resource path="res://Paddle/Paddle.gd" type="Script" id=5]
+[ext_resource path="res://Ball/Trail_Container.gd" type="Script" id=6]
+[ext_resource path="res://Walls/Walls.gd" type="Script" id=7]
+[ext_resource path="res://Camera/WorldEnvironment.gd" type="Script" id=8]
+[ext_resource path="res://Assets/confetti.png" type="Texture" id=9]
+[ext_resource path="res://Assets/bubble.png" type="Texture" id=10]
+[ext_resource path="res://Assets/mouth.png" type="Texture" id=11]
+[ext_resource path="res://Assets/eye.png" type="Texture" id=12]
+[ext_resource path="res://Assets/pupil.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Datalegreya-Thin.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://Assets/sound3.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/sound2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/sound1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/music.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Brick/Bricks.gd" type="Script" id=19]
+[ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=20]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=21]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -107,7 +107,7 @@ hue_variation_random = 0.25
 
 [sub_resource type="DynamicFont" id=16]
 size = 36
-font_data = ExtResource( 16 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="Environment" id=17]
 dof_blur_near_enabled = true
@@ -120,15 +120,15 @@ glow_bicubic_upscale = true
 
 [sub_resource type="DynamicFont" id=18]
 size = 30
-font_data = ExtResource( 16 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=19]
 size = 30
-font_data = ExtResource( 16 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=20]
 size = 35
-font_data = ExtResource( 16 )
+font_data = ExtResource( 14 )
 
 [node name="Game" type="Node2D"]
 
@@ -138,7 +138,7 @@ margin_top = -200.0
 margin_right = 1275.0
 margin_bottom = 968.0
 color = Color( 0, 0, 0, 1 )
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,7 +150,7 @@ autostart = true
 [node name="Tween" type="Tween" parent="Background"]
 
 [node name="Walls" type="StaticBody2D" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 0, 0, 0, 768, 1024, 768, 1024, 0, 64, 0, 64, -64, 1088, -64, 1088, 832, -64, 832, -64, -64, 64, -64, 64, 0 )
@@ -160,16 +160,16 @@ emitting = false
 lifetime = 0.4
 one_shot = true
 process_material = SubResource( 7 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="Bricks" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 19 )
 
 [node name="Paddle_Container" type="Node2D" parent="."]
 
 [node name="Paddle" type="KinematicBody2D" parent="Paddle_Container"]
 position = Vector2( 512, 700 )
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 
 [node name="Color" type="ColorRect" parent="Paddle_Container/Paddle"]
 margin_left = -50.0
@@ -186,33 +186,33 @@ shape = SubResource( 8 )
 [node name="Tween" type="Tween" parent="Paddle_Container/Paddle"]
 
 [node name="Face" type="Node2D" parent="Paddle_Container/Paddle"]
-script = ExtResource( 12 )
+script = ExtResource( 3 )
 
 [node name="Eye_left" type="Sprite" parent="Paddle_Container/Paddle/Face"]
 position = Vector2( -35, -10 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="Eye_right" type="Sprite" parent="Paddle_Container/Paddle/Face"]
 position = Vector2( 35, -10 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="Pupil_left" type="Node2D" parent="Paddle_Container/Paddle/Face"]
 position = Vector2( -35, -10 )
 
 [node name="Sprite" type="Sprite" parent="Paddle_Container/Paddle/Face/Pupil_left"]
 position = Vector2( 10, 0 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 
 [node name="Pupil_right" type="Node2D" parent="Paddle_Container/Paddle/Face"]
 position = Vector2( 35, -10 )
 
 [node name="Sprite" type="Sprite" parent="Paddle_Container/Paddle/Face/Pupil_right"]
 position = Vector2( 10, 0 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 
 [node name="Mouth" type="Sprite" parent="Paddle_Container/Paddle/Face"]
 position = Vector2( 0, 20 )
-texture = ExtResource( 14 )
+texture = ExtResource( 11 )
 
 [node name="Particles2D" type="Particles2D" parent="Paddle_Container"]
 position = Vector2( 507, 700 )
@@ -221,18 +221,18 @@ amount = 6
 lifetime = 0.4
 one_shot = true
 process_material = SubResource( 15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="Trail_Container" type="Node2D" parent="."]
-script = ExtResource( 10 )
+script = ExtResource( 6 )
 
 [node name="Ball_Container" type="Node2D" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 20 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 512, 384 )
 current = true
-script = ExtResource( 9 )
+script = ExtResource( 2 )
 
 [node name="Starting" type="Node2D" parent="."]
 
@@ -251,26 +251,26 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 17 )
-script = ExtResource( 11 )
+script = ExtResource( 8 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
-script = ExtResource( 17 )
+stream = ExtResource( 18 )
+script = ExtResource( 4 )
 
 [node name="Effect_Paddle" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 17 )
 
 [node name="Effect_Wall" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 16 )
 
 [node name="Effect_Brick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource( 15 )
 
 [node name="HUD" type="Control" parent="."]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 4 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -514,7 +514,7 @@ margin_top = 10.0
 margin_right = 1024.0
 margin_bottom = 50.0
 custom_fonts/font = SubResource( 20 )
-text = "Level 1"
+text = "Level 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
