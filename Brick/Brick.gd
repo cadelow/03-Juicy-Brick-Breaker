@@ -88,5 +88,6 @@ func die():
 		$Color.color = target_color
 
 
+
 	collision_layer = 0
 	collision_mask = 0

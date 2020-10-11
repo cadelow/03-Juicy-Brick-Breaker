@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Background/Background.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera.gd" type="Script" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://Brick/Bricks.gd" type="Script" id=19]
 [ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=20]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=21]
+
+[sub_resource type="DynamicFont" id=20]
+size = 35
+font_data = ExtResource( 14 )
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -126,8 +130,8 @@ font_data = ExtResource( 14 )
 size = 30
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=20]
-size = 35
+[sub_resource type="DynamicFont" id=21]
+size = 25
 font_data = ExtResource( 14 )
 
 [node name="Game" type="Node2D"]
@@ -148,6 +152,17 @@ wait_time = 5.0
 autostart = true
 
 [node name="Tween" type="Tween" parent="Background"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1024.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 20 )
+text = "Level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Walls" type="StaticBody2D" parent="."]
 script = ExtResource( 7 )
@@ -508,16 +523,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
+[node name="Over" type="Node2D" parent="."]
+
+[node name="Count" type="Label" parent="Over"]
 margin_right = 1024.0
 margin_bottom = 50.0
-custom_fonts/font = SubResource( 20 )
-text = "Level 2"
+custom_fonts/font = SubResource( 21 )
+text = "cleared: "
+align = 1
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="Over"]
 [connection signal="timeout" from="Background/Timer" to="Background" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Starting/Timer" to="Ball_Container" method="_on_Timer_timeout"]
 [connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
