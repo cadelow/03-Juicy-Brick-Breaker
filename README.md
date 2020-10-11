@@ -24,6 +24,7 @@ Other features:
 
 + Score tracking
 + Main menu
++ Level 1 & 2
 
 ## References
 None
