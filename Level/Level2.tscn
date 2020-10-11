@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Background/Background.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Brick/Bricks.gd" type="Script" id=19]
 [ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=20]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=21]
+[ext_resource path="res://Over/Count.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=20]
 size = 35
@@ -526,12 +527,14 @@ __meta__ = {
 [node name="Over" type="Node2D" parent="."]
 
 [node name="Count" type="Label" parent="Over"]
+visible = false
 margin_right = 1024.0
 margin_bottom = 50.0
 custom_fonts/font = SubResource( 21 )
 text = "cleared: "
 align = 1
 valign = 2
+script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
